@@ -19,7 +19,8 @@ public class UserController {
     UserService service;
 
     @GetMapping
-    public List<User> findAll(){
+    public List<User> findAll(@RequestParam(required = false) String name){
+        if (name != null) return service.findByName(name);
         return service.findAll();
     }
 

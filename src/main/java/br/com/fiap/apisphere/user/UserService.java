@@ -87,10 +87,7 @@ public class UserService {
     }
 
 
-
-
-
-
-
-
+    public List<User> findByName(String name) {
+        return repository.findByNameContainingIgnoreCase(name);
+    }
 }
